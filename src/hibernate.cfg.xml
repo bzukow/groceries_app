@@ -1,0 +1,47 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name = "hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/etargwarzyw?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">10</property>
+        <!-- SQL dialect -->
+        <property name = "hibernate.dialect">
+            org.hibernate.dialect.MySQL57Dialect
+        </property>
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Enable Hibernate stats in the logs -->
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <!-- Full names of the annotated entity classFull names of the annotated entity class -->
+        <mapping class="Klasy.Produkt"/>
+        <mapping class="Klasy.Certyfikat"/>
+        <mapping class="Klasy.ProduktCertyfikat"/>
+        <mapping class="Klasy.Adres"/>
+        <mapping class="Klasy.Osoba"/>
+        <mapping class="Klasy.Kurier"/>
+        <mapping class="Klasy.Klient"/>
+        <mapping class="Klasy.IloscProduktuWZamowieniu"/>
+        <mapping class="Klasy.Zamowienie"/>
+        <mapping class="Klasy.Firma"/>
+        <mapping class="Klasy.Kierownik"/>
+        <mapping class="Klasy.Pracownik"/>
+        <mapping class="Klasy.Umowa"/>
+    </session-factory>
+</hibernate-configuration>
